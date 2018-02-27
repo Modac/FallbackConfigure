@@ -1,0 +1,42 @@
+name: FallbackConfigure
+main: org.myftp.p_productions.FallbackConfigure.FallbackConfigure
+version: __build.number__
+commands:
+  fallbackconfigure:
+    description: Main FallbackConfigure command
+    usage: /<command> <enable|disable>
+    aliases: fc
+    
+permissions:
+  fallbackconfigure.*:
+    description: Gives access to all FallbackConfigure commands
+    children:
+      fallbackconfigure.enable: true
+      fallbackconfigure.disable: true
+      fallbackconfigure.toserver: true
+      fallbackconfigure.tofallback: true
+      fallbackconfigure.fallbackconfigure: true
+      fallbackconfigure.debug: true
+      fallbackconfigure.msg: true
+    default: op
+  fallbackconfigure.fallbackconfigure:
+    description: Allows to use the fallback configure command
+    default: op
+  fallbackconfigure.enable:
+    description: Allows to enable auto fallback configure
+    default: op
+  fallbackconfigure.disable:
+    description: Allows to disable auto fallback configure
+    default: op
+  fallbackconfigure.toserver:
+    description: Allows to manualy configure port forwarding to server
+    default: op
+  fallbackconfigure.tofallback:
+    description: Allows to manualy configure port forwarding to fallback
+    default: op
+  fallbackconfigure.debug:
+    description: Allows to recieve the network output
+    default: op
+  fallbackconfigure.msg:
+    description: Allows to recieve plugin messages
+    default: op

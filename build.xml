@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="FallbackConfigure" default="makejar" basedir=".">
+	<property file="build_info.properties"></property>
+	
+	<target name="update-revision">
+		<propertyfile  file="build_info.properties">
+			<entry key="build.revision.number" type="int" operation="+" value="1" pattern="00"/>
+		</propertyfile>
+	</target>
+	
+    <target name="makejar" description="Create a jar for the project">
+        <antcall target="update-revision"></antcall>
+    	<property name="build.number" value="${build.major.number}_r${build.revision.number}"/>
+    	
+		<replace file="plugin.yml" token="__build.number__" value="${build.number}"/>
+    	 
+    	<mkdir dir="target"></mkdir>
+        <jar destfile="target/${ant.project.name}.jar">
+            <fileset dir="bin"></fileset>
+            <fileset file="plugin.yml"></fileset>
+        </jar>
+    	
+    	<antcall target="current-number"></antcall>
+    	
+    	<replace file="plugin.yml" token="${build.number}" value="__build.number__"/>
+    	
+    </target>
+	
+	<target name="current-number">
+		<echo>Current build number:${build.number}</echo>
+	</target>
+
+</project>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre1.8.0_66"/>
+	<classpathentry kind="lib" path="D:/Daten/Bibliotheken/Dokumente/MinecraftServer/BuildTools/spigot-1.9.jar"/>
+	<classpathentry kind="lib" path="D:/Daten/Bibliotheken/Dokumente/MinecraftServer/BuildTools/Spigot/Spigot-API/target/spigot-api-1.9-R0.1-SNAPSHOT-shaded.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
